@@ -6,7 +6,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.github.dcendents.android-maven' // For Jitpack publishing
 apply from: '../publish_local.gradle' // For local publishing (~/.m2)
 
-group = 'com.github.Tweener'
+group = 'com.github.tweener'
 
 project.ext {
     artifactId = 'android-locationprovider'
@@ -20,7 +20,7 @@ android {
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
-        versionName "0.1.0"
+        versionName "0.1.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -46,4 +46,7 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxjava:2.1.1'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
     implementation 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
+
+    // Android Commons
+    implementation "com.github.tweener:android-common:$androidcommon_version"
 }
