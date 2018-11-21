@@ -11,9 +11,14 @@ import com.google.android.gms.location.GeofencingRequest
 import com.google.android.gms.location.LocationServices
 import io.reactivex.subjects.PublishSubject
 
-class GeofenceLocationProvider(
-    private val context: Context
-) {
+/**
+ * This class helps detecting when the user's device enters or exits a list of given geofences.
+ *
+ * You need to provide a [PendingIntent] using the [setPendingIntent] method to receive notifications when entering or exiting a geofence.
+ *
+ * This class requires the [ACCESS_FINE_LOCATION] permission to be already granted to work properly. Subscribe to [requestPermission].
+ */
+class GeofenceLocationProvider(private val context: Context) {
 
     companion object {
         private val TAG = GeofenceLocationProvider::class.java.simpleName
